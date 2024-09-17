@@ -3,6 +3,7 @@ global:
   ## Reference to one or more secrets to be used when pulling images
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
   ##
+  imageRegistry: ""
   imagePullSecrets: []
 
 kubernetes:
@@ -95,6 +96,7 @@ reloader:
       version: v1.1.0
     image:
       name: ghcr.io/stakater/reloader
+      base: stakater/reloader
       tag: v1.1.0
       pullPolicy: IfNotPresent
     # Support for extra environment variables.
